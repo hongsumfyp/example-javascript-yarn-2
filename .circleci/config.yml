@@ -3,16 +3,16 @@ jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
     working_directory: ~/example-javascript-yarn-2 # directory where steps will run
     docker: # run the steps with Docker
-     # - image: timbru31/java-node 
-       - image: timbru31/docker-java-node
+      - image: timbru31/java-node 
+     #  - image: timbru31/docker-java-node
      # - image: loyaltyone/docker-alpine-java-node
 
     steps: # a collection of executable commands 
       - checkout
       
-      #- run:
-       #  name: install git
-        # command: apk add --no-cache git
+      - run:
+        name: install git
+       command: apk add --no-cache git
          
       - run:
           name: install npm
