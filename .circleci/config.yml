@@ -7,11 +7,14 @@ jobs: # a collection of steps
       - image: loyaltyone/docker-alpine-java-node
 
       #- image: mongo:3.4.4 # and this image as the secondary service container      
-    steps: # a collection of executable commands 
-      - checkout
+ - checkout
 
       - run:
-          name: install npm
-          command: npm install 
+         name: install git
+         command: apk add --no-cache git
+        #arn
+      
+        name: install yarn
+        command: yarn install --frozen-lockfile
       
       - run: bash <(curl -s https://scripts.scantist.com/staging/ci-circle-jar.sh)
