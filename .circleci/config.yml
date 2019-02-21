@@ -3,7 +3,8 @@ jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
     working_directory: ~/example-javascript-yarn-2 # directory where steps will run
     docker: # run the steps with Docker
-      - image: timbru31/java-node 
+     # - image: timbru31/java-node 
+      - image: circleci/node:latest 
       #- image: mongo:3.4.4 # and this image as the secondary service container      
     steps: # a collection of executable commands 
       - checkout
